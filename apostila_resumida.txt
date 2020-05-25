@@ -1,0 +1,205 @@
+Módulo 1 - Fundamentos 
+	##### Capítulo 1 - Introdução
+		Formas de aprendizado
+			1) Supervisionado:
+				São dadas entradas e respostas, classes conhecidas previamente
+				Útil para:
+					Classificação
+					Regressão
+					Estimativa de probabilidade condicional
+			2) Não Supervisionado:
+				São dadas somente as entradas, classes não conhecidas previamente. Algoritmos autoditadas.
+				Melhores para números grandes de possibilidades de entradas
+				Útil para:
+					Reconhecimento facial
+					Manuscritos
+					Predição de ações
+					Gerenciamento de riscos na área das finanças
+					Predição de tráfego
+					Jogos
+			3) Por Reforço:
+				Recompensas e penalidades são dadas  cada execução de ação do agente.
+				O agente deve sempre tomar decisões a maximar as recompensas. Z(r)
+		
+		Overfitting e Underfitting
+			Overfitting (Sobreajuste)
+				O modelo estatístico se ajusta de forma excessiva aos dados de treinamento.
+				O algoritmo não generaliza de forma necessária.
+				Baixa taxa de erros em treinamento e alta em testes.
+				Possivel motivo:
+					Conjunto muito grande de exemplos com pequena variação entre as classes.
+			Underfitting (Subajuste)
+				Alta taxa de erro na aprendizagem/treinamento e nos testes.	
+				Problemas no próprio conjunto de dados de treinamento.
+			O ideal é ter um modelo balenceado que eja fléxivel o sificiente para capturar a forma de curva da função f e que não seja exatamente igual a esta.
+
+		Dimensionamento e definição de problemas
+			A maldição da dimensionalidade é o termo que se refere a vários fenômenos que surgem na análise de dados m espaços com muitas dimensões (atributos). Um grande número de atributos tende a gerar informação rendundante e isso tende a prejudicar o sitema.
+			Os objetos é um valor exponencial em relação as possibilidades de cada atributo deste. Um objeto com 10 atributos com 5 possibilidades cadagera um objeto de 5**10 possibilidades.
+			Nos espaços com muitas dimensões as amostras se tornam esparsas e pouco similares, ficando distantes umas das outras.
+			A redução da dimensionalidade melhora a eficácia dos algoritmos, reduz o tamanho da amostra, simplifica o modelo e melhora a visualização dos resultados. Deve-se utilizar um número pequeno de atributos, selecionados adequadamente ou criados por agragação de outros atributos ou transformação de dados.
+
+		Projetando um sistema de aprendizagem
+			Um programa de computador aprende a partir de uma experiência com uma classe de tarefas e uma medidade de desempenho.
+			Etapas do projeto:
+				1) Escolher uma experiência de treinamento para o sistema
+					Tipo de e o grau de controle da sequencia de treinamento (Formas de aprendizado).
+					Representa a distribuição de exemplos usados no treinamento.
+				2) Escolher uma função objetivo.
+					O que será aprendido. Como este conhecimento será utilizado.
+				3) Escolher uma representação da função objetivo
+					Programa de aprendizado (redes neurais, funções polinominais, coleção de regras, etc.).
+				4) Escolher um algoritmo para a função de aproximação
+
+		Pré-processamento e extração de características
+			Definição:
+				A característica é um atributo utilizado na descrição de um padrão, objeto ou situação. Devem ser discriminantes e invariantes, e os objetos devem ser conhecidos independentemente de sua rotação, translação, escala, etc..
+				Qualquer medida que se possa extrair do objeto, seja simbólica, numérica contínua (intervalo ou união de números reais), numérica discreta(resultados possíveis é finito ou enumerável) ou numérica binária (booleana).
+			Extração de características
+				Objetivo:
+					Caracterizar objetos verificando atributos que são similares para objetos da mesma classe e bastante diferente de objetos de outras classes.
+			Pré-processamento:
+				Objetivo:
+					Preencher dados auzentes, remover ruídos (valores absurdos) e resolver inconsistências
+
+	##### Capítulo 2 - Técnicas de aprendizado de máquina
+		Classificação
+			Objetivo:
+				Contruir um modelo que seja capaz de classificar automaticamente novos objetos baseado em suas características (atributos) a partir do treinamento do algoritimo com uma base de objetos já classificados.
+			Técnica de aprendizado supervisionado.
+			Utilização:
+				Classificação de riscos
+				Classificação de emails como SPAM
+				Separação de imagens
+				Diagnostico de doenças baseado em sintomas
+			Algorítimos (Outros também podem ser utilizados):
+				Árvores de decisão
+				KNN
+				Redes neurais
+				naive Bayes
+				SVM
+
+		Agrupamento (Clusters)
+			Objetivo:
+				Colocar em um mesmo grupo (Cluster) os objetos que sejam similares de acordo com algum critério pré-determinado.
+			A divisão acontece de acordo com um tipo de relacionamento de similaridade.		
+			As classes podem não ser conhecidas.
+			Cada agrupamento (cluster) é exclusivo.
+			Cada instância pertence a apenas um agrupamento (Cluster) ou possui a probabilidade percentual de pertencer a cada grupo.
+			Algoritmo mais comum K-médias.
+			Utilização:
+				Identificação de clientes similares para maior assertividade no oferecimento de produtos
+				Agrupamento de pacientes com os mesmos sintomas
+				Identificação de público alvo ou segmento de mercado para campanha de marketing
+				Classificação de documentos
+				Qualquer aplicação com grandes quantidades de dados.
+
+		Regressão
+			Objetivo:
+				Retornar previsões de valores numéricos a partir da análise de um conjunto de caracteristicas pré-determinadas e a relação destas com saídas numéricas. Estabelecer a relação entre um conjunto de dados de entrada e uma saída numérica,
+			Utilização:
+				Determinar preço de venda
+				Prever quantidade de vendas baseado em resultados anteriores
+				Previsão do tempo
+				Previsçao do comportamento da bolsa de valores
+			Regressão linear:
+				Equação usada para determinar o valor estimado de uma variável y, dados os valores de algumas variáveis x.
+			Regressão não linear:
+				Os dados observacionais são limitados por uma função que é a combinação não linear dos parâmetros do modelo e depende de uma ou mais variáveis independentes. 
+				Os dados são ajustados por um método que realiza aproximações sucessivas.
+
+		Reconhecimento de padrões
+			Objetivo:
+				Classificar objetos em um número de categorias ou classes.
+				Obserrvar os dados brutos e tomar uma ação baseada na categoria de um padrão.
+			Utilização:
+				Identificação de suspeitos criminais por reconhecimento facial ou impressão digital
+				Reconhecimento de palavra contruída em uma escrita cursiva
+				Reconhecimento de caracteres
+				Classificação de células em análises laboratoriais
+				Contágem de particulas de matéria
+			Etapas do funcionamento:
+				1) O algoritmo recebe um objeto desconhecido
+				2) Um sensor faz a extração de suas características
+				3) O objeto é classificado em uma das possíveis classes
+			Pode-se atribuir um padrão a um conjunto desconhecido de classes de padrões (Cluster) ou identificar um padrão como membro de um conjunto de oadrões (Classificação)
+
+		Sistemas de recomendação
+			Objetivo:
+				Auxiliar indivíduos a identificarem conteúdos de interesse em um conjunto de opções.
+				Analisar os dados de um problema e extrairinformações úteis para futuras predições.
+			Utilização:
+				Experências de usuários.
+			Para o funcionamento é necessário:
+				1) Informações sobre as preferências dos usuários.
+				2) Método que determina se um dado item é interessante para um usuário
+			Tipos:
+				Explícita: O usuário indica espontaneamente o que é importante para ele
+				Implícita: O próprio sistema realiza ações baseadas em algumas características (de utilização, perfil, etc.) do usuário.
+			Filtragem colaborativa
+				Processo de filtrar  informação ou padrões usando técnicas que envolvem a colaboração de múltiplos agentes, pontos de vistas, fontes de dados, etc.
+				Funciona a partir de uma base de dados de preferência de usuários. Novos usuários são comparados a esta base para encontrar os que possuem características similares.
+
+		Processamento e mineração de textos
+			Processo de descoberta do conhecimento que aplica algoritimos que processam textos e identificam informações úteis e implícitas.
+			As informções não podem ser recuperadas usando métodos tradicionais pois geralmente são armazenadas no formato não estruturado.
+			Objetivo:
+				Contribuir com a busca específica em documentos, análise quantitativa e qualitativa de grandes volumes de dados e melhor compreensão de textos disponíveis em documentos
+			Etapas:
+				1) Coleta
+					Formação da base de conhecimento ou corpus
+					Robôs de Crawling atuando em qualquer ambiente
+				2) Preparação dos dados
+					Processamento de linguagem natural (PLN)
+				3) Indexação
+					Objetivo: Acesso rápido, busca.
+					Recuperação de informação (IR)
+				4) Mineração
+					Calcula interferências e extração de conhecimento.
+					Mineração de dados (DM)
+				5) Análise
+					Análise humana. Navegação.
+					Leitura e interpretação dos dados.
+			Utilização:
+				Web Crawler
+				Análise de sentimento
+				Inteligência competitiva
+				Suporte e atendimento ao usuário
+				Área do direito
+				Medicina
+
+		Análise de sentimentos
+			Objetivo: 
+				Identificar o sentimento que os usuários presentam a respeto de uma entidade de interesse.
+			Permitir que um usuário obtenha um relatório contendo o que as pessoas andam dizendo sobre algo, de forma compilada (sem precisar encontrar e ler as informações).
+			Gera um termômetro de sentimentos sobre um determinado assunto.
+			Utilização:
+				Reputação de empresas
+				Aceitação de produtos
+			Dificuldades:
+				Sentenças sintaticamente mal formuladas.
+				Distinguir fatos de opiniões
+				Sarcasmo e ironias
+				Uso de pronomes para referenciar itens
+				Uso de termos informais na internet
+				Uso de memes
+				Uso de emoticons
+			Etapas:
+				1) Coleta do conteúdo (obtenção dos dados)
+				2) Classificação do sentimento relacionado ao conteúdo avaliado (positivo, negativo e neutro)
+				3) Sumarização dos resultados
+
+		Métodos ensembles
+			Dividir para conquistar.
+			Objetivos:
+				Classificar os dados de entrada em diferentes classificadores com diferentes pesos afim de se obter um resultado final através da combinação dos resultados dos classificadores com seus respectivos pesos.
+			Etapas:
+				1) Enviar os dados de entrada a cada classificador
+				2) Classificação
+				3) Resultados são enviados para um combinador que dará um resultado finalúnico baseado nas clsasificações feitas e seus respectivos pesos
+			Razões de utilização:
+				Bom desempenho no treinamento não garante um bom desempenho na generalização
+				Não seguir a recomendação de um especialista
+				O volume de dados a ser analisado pode ser muito grande para um único classificador
+				Alternativa para criação de classificadores mais precisos.	
+			Pode aumentar o tempo de processamento por causa do aumento de classificadores .
