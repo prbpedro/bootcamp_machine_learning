@@ -1,5 +1,7 @@
 Módulo 1 - Fundamentos 
+
 	##### Capítulo 1 - Introdução
+
 		Formas de aprendizado
 			1) Supervisionado:
 				São dadas entradas e respostas, classes conhecidas previamente
@@ -20,7 +22,7 @@ Módulo 1 - Fundamentos
 			3) Por Reforço:
 				Recompensas e penalidades são dadas  cada execução de ação do agente.
 				O agente deve sempre tomar decisões a maximar as recompensas. Z(r)
-		
+
 		Overfitting e Underfitting
 			Overfitting (Sobreajuste)
 				O modelo estatístico se ajusta de forma excessiva aos dados de treinamento.
@@ -202,4 +204,83 @@ Módulo 1 - Fundamentos
 				Não seguir a recomendação de um especialista
 				O volume de dados a ser analisado pode ser muito grande para um único classificador
 				Alternativa para criação de classificadores mais precisos.	
-			Pode aumentar o tempo de processamento por causa do aumento de classificadores .
+			Pode aumentar o tempo de processamento por causa do aumento de classificadores.
+
+	##### Capítulo 3 - Redes neurais
+		As redes neurais artificiais (RNAs) são  modelos matemáticos que se assemelham as estruturas neurais biológicas e que tem capacidade computacional adiquirida por meio de aprendizado e generalização.
+		O aprendizado em RNA está normalmente associado à capacidade que elas possuem de adaptarem seus parâmetros como consequência de sua interação com o meio externo.
+		Os critérios de desempenho que podem determinar a qualidade do modelo neural e o ponto de parada dos treinamentos são determinados por meio dos parÂmetros utilizados no treinamento da rede neural.
+		A generalização de uma rede está relacionada à capacidade que esta rede tem em promover respostas coerentes para os dados utilizados como entrada em seu treinamento.
+		As informações em RNAs fluem através de estruturas neurais artificiais, onde o processamento é feito de forma paralela e distribuida (dimensões).
+		A estrutura de processamento de uma rede neural é o neurônio artificial que tem como entrada de dados um vetor, de dimensão p, formado de tuplas contendo variável x e seu respectivo peso w. A soma das váriaveis de entrada x ponderadas pelos seus pessos correspondentes w, é chamada de saída linear u. A saída de um neurônio artificial y é chamada de saída de ativação, esta pode ser obtida pela aplicação da função de ativação à saída linear. A função de ativação pode assumir várias formas geralemente não lineares. Exmplo: função de grau unipolar (limite).
+		As RNAs têm a capacidade de aprendizado por meio de exemplos e também por meio de extrapolações e interpolações em cima do que elas já aprenderam.
+		Algoritimo de aprendizagem:
+			Conjunto de procedimentos definidos para adaptação dos parâmetros de uma RNA para que esta tenha a capacidade de aprender uma função específica.
+			Os métodos de treinamento podem ser supervisionados ou não.
+
+		Tipos de rede:
+			1) Pereceptron de uma camada: 
+				Só possue uma dimensão ou camada, utilizada para dividir duas classes linearmente separáveis. Apresenta erro para classes não linearmente separáveis. 
+				O resultado da somatória das entradas ponderadas é somado ao limiar de ativação O e repassado a função de ativação que terá a saída y. 
+				Tipo de função bipolar ou degrau normalmente.
+			2) Redes de múltiplas camadas (MPL - Multilayer Perceptron):
+				Formadas por um conjunto de nós sensoriais ou fontes (receptores de informações), um conjunto de nós computacionais (camadas ocultas) e um conjunto de nós de saída. Generalização do perceptron de uma camada. 
+				Trata dados não linearmente separáveis.
+				O uso de uma grande quantidade de camadas não é indicado pois o erro ocorrido em uma camada é propagado para as outras.
+				O uso excessivo de neurônios pode levar a memorização dos dados de treinamento ao invés da generalização.
+				O uso de poucos neurônios poderá levar a rede a aumentar o tempo de treinamento e com isso dificultar a ótima representação do problema proposto. 
+			3) Redes Neurais de Hopfield:
+				Consiste em um conjunto de neurônios e um conjunto correspondente de atrasos unitários, formando um sistema realimentado de múltiplos laços. A saída de cada neurônio é realimentada através de um atraso unitário para cada um dos outros neurônios na rede.
+				Não há autoalimentação.
+				Podem ser usadas como memórias associativas, nas quais a rede pode armazenar informações baseadas em alguns de seus estados.
+				Podem resolver problemas de análise combinatória.
+
+		Deep Learning - Redes convolucionais (RNCs)
+			Conjunto de algoritimos que tentam modelar abstrações de alto nível de dados usando um garfo profundo várias camadas de processamento.
+			Permite lidar com problemas que envolvem transformações lineares ou não lineares.
+			Inspiradas no sistema de visão humana.
+			Recebe como entrada pequenas porções de imagens , na camada mais baixa da estrutura hierárquica. A arquitetura mais complexa permite estabilidade mesmo com alterações em relação a escala ou rotação.
+			Técnica mais utilizada:
+				Convolutional neural networks - Utilizada oara processamento de imagens, detecção de caracteres escritos a mão e leitura de texto.
+			Exemplos de uso:
+				1) Reconhecimento facial
+				2) Classificação de doenças,
+				3) Carros autônomos,
+				4) Visão computacional
+				5) Processamento de linguagem natural, etc.
+
+	##### Capítulo 4 - Algoritimos de machine learning
+		Árvores de decisão
+			Definição:
+				Modelos estatísticos que utilizam um treinamento supervisionado para a classificação e previsão de dados.
+				Um problema complexo é decomposto em subproblemas mais simples e recursivamente esta técnica é aplicada a cada subproblema.
+				Pode-se extrair regras se-então que são facilmente compreendidas.
+				A capacidade de discriminação de uma árvore vem da divisão do espaço pelos atributos em subespaços e cada subespaço é associado a uma classe.
+				Em uma árvore de decisão cada nó conteém um teste de atributo, cada ramo corresponde a um possível valor deste atributo, cada nó-folha está assiciado a uma classe e cada percurso da árvore (raiz até folha) corresponde a uma regra de classificação.
+			Paradigmas dos modelos computacionais de classificação:
+				1) Top-down
+					Obtenção do modelo de classificação a partir de informações fornecidas por especialistas
+				2) Bottom-up
+					Obtenção de modelo de classificaçã ela identificação de relacionamentos entre variáveis dependentes e independentes em bases de dados rotulados. 
+					O classificador é induzido por mecanismos de generalização fundamentados em exemplos específicos (Conjunto finitos de objetos rotulados).
+					Existem propostas também para dados não rotulados.
+			Exemplos de utilização:
+				1) Risco de crédito
+				2) Diagnóstico médico
+				3) Decisões de compra e venda
+				4) Diagnóstico de problemas em equipamentos
+			Entropia
+				Definição: 
+					Cálculo do ganho de informação baseado em uma medida utilizada na teoria da infomação.
+					Valor de 0 a 1. 
+					Quanto maior a proximidade de 1, maior  a entropia e a e a heterogenização dos dados.
+					Caracteriza a impureza dos dados: Medida da falta de homoegneidade dos dados de entrada em relação a sua classificação.
+			Objetivos da construção de uma árvore de decisão:
+				1) Diminuir a entropia (a aleatoriedade da variável objetivo).
+				2) Ser consistente com o conjunto de dados.
+				3) Possuir o menor número de nós. 
+			Principais algoritimos:
+				1) ID3 (cursivo e baseado em busca exaustiva)
+				2) C4.5 (usa técnica dividir para conquistar)
+					
+.
