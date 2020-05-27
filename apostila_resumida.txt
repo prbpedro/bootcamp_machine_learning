@@ -305,7 +305,7 @@ Módulo 1 - Fundamentos
 
 		KNN - K-Nearest Neighbours
 			Definição:
-				Realiza a classficiação de um novo objeto baseado nos vizinhos mais próximos). O núcleo de seu funcionamento está em descobrir os k vizinhos mais próximos de uma determinada instância e classifica-la conforme a classificação da maioria de seus vizinhos.
+				Realiza a classficiação de um novo objeto baseado nos vizinhos mais próximos. O núcleo de seu funcionamento está em descobrir os k vizinhos mais próximos de uma determinada instância e classifica-la conforme a classificação da maioria de seus vizinhos.
 				Para sua utilização é necessário um conjunto de exemplos de treinamento, a definição de uma métrica para calcular a distância entre os exemplos de treinamento e a definição de k.
 				Método de aprendizado supervisionado.
 			Exemplos de utilização:
@@ -315,7 +315,8 @@ Módulo 1 - Fundamentos
 			Definição:
 				Método de aprendizado supervisionado.
 				Desconsidera completamente a correlação entre as veriáveis (features) dos objetos.
-				Muito utilizado quando a o conjunto de treinamento é grandee ou moderado e os atributos (features) descrevem as classes de forma independente.
+				Muito utilizado quando a o conjunto de treinamento é grande ou moderado e os atributos (features) descrevem as classes de forma independente.
 				Muito simple, rápido e de desempenho maior que a maioria dos classficiadores.
+				Para cada classe do modelo são calculadas as probabilidades de pertencimento a esta de acordo com cada valor possível característica individualmente de forma que a probabilidade final de pertencimento a uma classe se da pela maior probabilidade individual encontrada.
 			Exemplos de utilização:
 			Categoriazar textos baseados na frequência das palavras usadas.
