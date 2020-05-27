@@ -191,3 +191,4 @@ ax[1].set_title("Random Forest", fontsize=15.)
 sns.heatmap(pd.DataFrame(cm2, index=classes, columns=classes),
             cmap='winter', annot=True, fmt='.2f', ax=ax[1]).set(xlabel="Previsao",
                                                                 ylabel="Valor Real")
+plt.show()
