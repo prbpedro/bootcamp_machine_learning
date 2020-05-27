@@ -231,6 +231,7 @@ Módulo 1 - Fundamentos
 				O uso de uma grande quantidade de camadas não é indicado pois o erro ocorrido em uma camada é propagado para as outras.
 				O uso excessivo de neurônios pode levar a memorização dos dados de treinamento ao invés da generalização.
 				O uso de poucos neurônios poderá levar a rede a aumentar o tempo de treinamento e com isso dificultar a ótima representação do problema proposto. 
+				Pode ser feedfoward aonde as camadas são acionadas de forma ordenada da entrada a saída da rede, ou backpropagation (retropropagation) que propaga os erros para os neuronio que foram acionados para o seu cálculo no sentido inverso das camadas
 			3) Redes Neurais de Hopfield:
 				Consiste em um conjunto de neurônios e um conjunto correspondente de atrasos unitários, formando um sistema realimentado de múltiplos laços. A saída de cada neurônio é realimentada através de um atraso unitário para cada um dos outros neurônios na rede.
 				Não há autoalimentação.
