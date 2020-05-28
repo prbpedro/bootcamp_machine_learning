@@ -1,19 +1,12 @@
 import pandas
-import numpy
-from sklearn.preprocessing import MinMaxScaler, LabelEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix, accuracy_score
-from sklearn.naive_bayes import GaussianNB
+from sklearn.preprocessing import LabelEncoder
 import seaborn
 import matplotlib.pyplot
-from sklearn.svm import SVC
-from sklearn.preprocessing import LabelEncoder
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 import sklearn.preprocessing
 import sklearn.tree
 import sklearn.model_selection
-from sklearn.tree import DecisionTreeClassifier
 
 base_path = '/home/prbpedro/Development/repositories/github/bootcamp_artificial_intelligence/'
 dataframe = pandas.read_csv(base_path + "src/input/desafio1/comp_bikes_mod.csv")
