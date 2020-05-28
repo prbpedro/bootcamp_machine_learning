@@ -69,7 +69,6 @@ r2 = r2_score(y, prediction)
 print("Coeficiente de Determinação (R2):", r2, end='\n\n')
 # Resposta 11 - 0.40
 
-
 entrada_arvore=df_reduced[['hum','casual']]
 saida_arvore=y=df_reduced['cnt']
 regression_tree=sklearn.tree.DecisionTreeRegressor() 
