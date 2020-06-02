@@ -1,0 +1,309 @@
+Módulo 2 - Modelos Preditivos Séries Temporais 
+
+	##### Capítulo 1 - Introdução
+
+        Definição:
+            Dados
+                Nível Sintático. 
+                Símbolos oganizados. Valores de atributos.
+            Informação
+                Nível semântico. 
+                Significado, Reflexão.
+            Conhecimento
+                Nível pragmático. 
+                Informação em ação, tomada de decisão. 
+                Processo de uso da informação para tomada de decisão.
+
+        Modelos de predição:
+            Classificação:
+                1) Tipo de dados de entrada: 
+                    Dados contínuos: Regressão
+                    Dados categóricos: Classificação
+                2) Número de variáveis independentes:
+                    1: Simples
+                    2+: Múltipla
+                3) Número de variáveis dependentes:
+                    1: Univariada
+                    2+: Multivariada
+
+        Passos para criação de modelos:
+            1) Definição do problema
+                Definir os KPIs do projeto e o problema de forma clara e objetiva.
+            2) Coleta de dados
+                Definir os tipos de dados, as fontes destes e os métodos de amostragem mais adequados.
+            3) Pre processamento
+                Definir um conjunto final de dados pós-processados que serão efetivamente utilkizados como entrada
+            3) Aprendizagem de modelos
+                Seleção do método que melhor se adeque os objetivos traçados e aos dados disponíveis.
+                Identificação dos valores e parâmetros ideias para o método selecionado.
+            4) Avaliação e comparação dos modelos  
+
+	##### Capítulo 2 - Coleta de dados
+
+        Definição:
+            População ou espaço amostral: Conjunto de todos os objetos que abrangem um estudo.
+            Amostra: Parte da população selecionada para a modelagem preditiva.
+            Ponto do espaço amostral: um resultado possível (membro do espaço amostral).
+            Variável aleatória: avriável quantitativa que o resultado depende de fatores aleatórios.
+            Parâmetro: Característica ou comportamento desconhecido da população selecionada (Representam quantidades númericas que podem ser interpretadas).
+            Predição ou estimativa: Valor estimado a partir do modelo preditivo treinado com os dados obtidos pela amostra para o parâmetro.
+            Unidade amostral: Qualquer elemento individual da população. Pode também ser um conglomerado de unidades de uma amostra.
+
+        Quando amostrar:
+            Não se tem acesso a todos os dados dispóníveis.
+            Custo de utilização de toda a população for maior que limite.
+            É necessário avaliar a qualidade do modelo Preditivos.
+            População infinita ou arbritariamente grande.
+            Estudos de comportamentos dinâmicos.
+            Restriçao de tempo e custo computacional.
+            Predições sobre dados desconhecidos.
+            Identificação de comportamentos verdadeiramente significativos
+
+        Quando usar toda a população:
+            População pequena e o custo de ampstrar for similar ao de se utilizar toda a .população.
+            Tamanho da amostra é muito grande.
+            Necessária precisão completa sobre os resultados.
+            População muito heterogênea e o erro introduzido pela amostra se torna grande.
+
+        Planejamento amostral
+            A coleta de dados deve ser realizada observando-se uma metodologia adequada para que os resultados possam ser extrapolados para a população como um todo.
+            Fatores que devem ser definidos:
+                1) População alvo: Subconjunto de objetos pertinentes para o estudo.
+                2) Unidade amostral: indivíduos ou grupos de indivíduos.
+                3) Tamanho da população: número total de unidades amostrais na população alvo.
+                4) Tamanho da amostra: número total de unidades amostrais na amostra.
+                5) Técnica de amostragem: método de seleção das amostras.
+
+        Técnicas de amostragem:
+            1) Aleatória simples
+                Realiza-se n iterações selecionando um elemento da população aleatoriamente, podendo este ser repetido ou não.
+            2) Aleatória sistemática
+                Determina-se um ponto de partida aleatoriamente e seleciona-se os itens aonde o índice é igual ou igual ao índice do item selecionado anteriormente mais o tamanho necessário para a amostra.
+            3) Aleatória estratificada
+                Divide-se a população em estratos de forma que cada elemento da população pertença a somente um estrato.
+                Os estratos são mais homogêneos que a população.
+                Tipos:
+                    1) Mesmo tamanho:
+                        Sorteia-se igual n[úmero de elementos de cada estrato.
+                    2) Proporcianal:
+                        Número de elementos selecionados de cada estrato é proporcinal ao total de elementos do estrato em comparação com a população.
+            4) Por conglomerado de um estágio:
+                Divide-se a população em conglomerados de elementos separados pela similaridade de suas características.
+                Seleciona-se então aleatoriamente os conglomerados que farão parte da amostra.
+            5) Por conglomerado de múltiplos estágios:
+                Divide-se a população em conglomerados de elementos separados de forma hieráquica.
+                Seleciona-se então aleatoriamente os conglomerados e posteriormente os elementos que farão parte da amostra.
+        
+        Amostragem não-probabilística
+            Escolha deliberada das amostras de uma dada população.
+            Técnicas de amostragem:
+                1) Por conveniência
+                    Elementos são selecionados sem probabilidades previamente especificadas ou conhecidas.
+                2) Intencional ou por julgamento
+                    Seleção das unidades amostrais e acordo com um perfil traçado para alcançar os objetivos do estudo.
+                3) Snowball
+                    Encontra-se um onjunto incial de unidades amostrais e estas indicam aonde outras unidades amostrais.
+                4) Por quotas
+                    Amostragem por estratificação sem sorteios, aonde as unidades amostrais são selecionadas de acordo com os interesses do estudo.
+        
+        Qualidade das amostras:
+            Características fundamentais para a qualidade das amostras:
+                Consitência dos dados das unidades amostrais.
+                Diversidade da amostra.
+                Transparência do processo de amostragem.
+            
+        Erros amostrais:
+            Definição:
+                Diferênça entre a estimativa obtida para um parâmetro e seu verdadeiro valor.
+                Pode ser medido através da própria amostra.
+                Coeficiente de variação: variabilidade esperada da estimativa quando comparada ao valor verdadeiro.
+            Regra de ouro:
+                Coeficiente de variação < 10%: Amostra boa.
+                Coeficiente de variação > 10% e < 20%: Amostra aceitável.
+                Coeficiente de variação > 20%: Amostra ruim.
+            
+        Erros não amostrais:
+            Definição:
+                Qualquer tipo de erro decorrente da coleta de dados.
+                Podem ser introduzidos em qualquer etapa da coleta ou do processamento dos dados.
+                Para evitar necessário análise e controle dos dados.
+            Tipos principais:
+                1) Erros de valores ausentes:
+                    Quanto maiora taxa de valores ausentes, maior será o risco de viés presente na amostra.
+                2) Erros de cobertura:
+                    Ocorre quando a diferença numérica na população alvo e população amostrada.
+                    Tipos:
+                        Aumentada: População amostrada é maior que a população alvo. (Não é um problema)
+                        Reduzida:  População amostrada é menor que a população alvo. 
+                3) Erros de medição:
+                    Ocore quando uma característica de uma unidade amostral tem valor diferente do real.
+                4) Erros de processamento:
+                    Erros ocorridos nas etapas do processamento e armazenagem das amostras como a captura codificação e transformação dos dados.
+
+	##### Capítulo 3 - Pré-processamento de Dados
+
+        Definição:
+            Etapa que garante a qualidade (consistência, confiabilidade, acurácia, completeza, interpretabilidade, etc.) dos dados (valores das características) das unidades amostrais.
+
+        Maiores problemas dos dados:
+            1) Incompletude
+                Ausência de valores de alguns atributos, ausência de determinados atributos de interesse ou quando a coleção contém apenas dados agregados.
+            2) Inconistência
+                Dados que contém discrepâncias entre os valores esperados e observados.
+            3) Duplicação
+                Duplicação de registros, ocorre em virtude de uma metodologia de coleta equivocada ou erros de verificação.
+            4) Ruídos
+                Erros ou outliers presentes na coleção de dados.
+
+        Tipos de dados:
+            1) Numérico
+                1.1) Contínuo
+                    1.1.1) Intervalo
+                    1.1.2) Razão
+                1.2) Discreto
+                    1.2.1) Ordinal
+                    1.2.2) Periódico
+                    1.2.3) Nominal
+            2) Categórico
+                2.1) Nominal
+                2.2) codificação
+            3) Textual
+
+        Principais modelos de dados:
+            1) Registros
+                Dados que consistem em uma coleção e registros, cada um dos quais possui um conjuntofixo de atributos.
+            2) Grafos
+                Conjunto finito (possivelmente mutável) e vértices ou nós juntamente com um conjunto de pares não ordenados desses vértices para um grafo não direcionado ou um conunto de pares ordenados para um grafo direcionado.
+            3) Tipos ordenados
+                Sequência de eventos ou itens em que a ordem de ocorrência carrega uma informação relevante e útil para a análise e compreensão dos dados.
+        
+        Tratamento de dados numéricos e categóricos
+            Principais passos:
+                1) Limpeza dos dados
+                    Definição:
+                        Processo de preenchimento de valores ausentes, atenuação distorções em dados ruidosos, identificação e remoção de outliers e duplicações e resolução de inconsistêcias observadas nos dados.
+                    Principais estratégias para o tratamento de dados ausentes:
+                        1) Ignorar observações
+                        2) Preencher automaticamente
+                        3) Usar uma constante global ou valores médios.
+                        4) Preencher automaticamete via inferência bayesiana, método de expectation maximization (EM) ou árvore de decisão
+                    Principais estratégias para a remoção de Ruídos 
+                        1) Análise de variabilidade das variáveis
+                        2) Detecção manual de valores suspeitos
+                        3) Métodos de binificação e atenuação de valores.
+                    Principais estratégias para o tratamento de outliers:
+                        1) Uso de algoritimos de agrupamento (fitting de curvas ou testes de hipótese sobre algum modelo assumido como verdadeiro para os dados)
+
+                2) Integração
+                    Definição:
+                        Tem como objetivo combinar dados de múltiplas fontes de dados e metadados em uma única fonte coerente.
+                        Envolve a detecção e resolução de conflitos de valores.
+
+                3) Transformação
+                    Definição:
+                        Processe de transformação ou consolidação dos dados em formas apropriadas de acordo com os métodos de modelagem preditivas a serem aplicados.
+                    Principais tarefas:
+                        1) Agregação ou sumarização de valores
+                            Aplicação de função de agragação de distintos valores em um único.
+                        2) Generalização
+                            Uso de ontologia ou hierarquia de conceitos para substituir conceitos específicos por outros mais genéricos.
+                        3) Normalização
+                            Alteração dos valores de atributos para que caiam sobre um determinado intervalo de interesse.
+                        4) Construção de features
+                            Criação de novos atributos/variáveis a partir dos dados.
+
+                4) Discretização
+                    Definição:
+                        Transformação de valores numéricos contínuos em valores discretos.
+                        Usados para reduzir o número de valores para determinados atributos contínuos, dividindo o intervalo do atributo em distintos valores discretos.
+                        O critério de desempenho mais importante do método de discretização é a taxa de precisão.
+                    Principais métodos:
+                        1) Discretização não supervisionada
+                            1.1) Intervalos iguais: divide-se os números em intervalos de mesmo tamanho.
+                            1.2) Intervalos uniformes: usa-se intervalos contendo o memo número de valores.
+                        2) Discretização supervisionada
+                            2.1) Limite de  classes: identifica-se intervalos de valores associados a distintas classes
+                            2.2) Entropia: gera-se intervalos de valores que gere a menor entropia sobre algum atributo usado como classe.
+                    
+                5) Redução
+                    Definição:
+                        Redução do volume ou das dimensões
+                        Representar de uma forma mais compacta, sem perda de informações importantes.
+                    Técnicas de redução:
+                        1) Seleção de características (feature selection):
+                            Atribui a cada atributo um valor de relevância frente as demais informações que já existem na coleção.
+                        2) Redução de características (feature reduction):
+                            Cria-se atributos derivados que podem ser visto como combinações lineares dos atributos originais.
+
+                            Fatoração de matrizes:
+                                2.1) Decomposição por valor singular (SVD):
+                                    Definição:
+                                        Realiza a redução de postos e a aproximação de redução de baixo-posto de uma matriz que representa dados expressos em um espaço N dimensional.
+                                    Objetivos:
+                                        2.1.1) Eficiência de manipulação matriciais.
+                                        2.1.2) Redução da dimensionalidade dos dados.
+                                        2.1.3) Redução de ruídos dos dados originais.
+                                2.2) Análise dos componentes principais (PCA)
+                                    Definição:
+                                        Técnica estatística multivariada que visa explorar a estrutura de variabilidade dos dados.
+                                    Objetivos:
+                                        2.2.1) Redução de ruídos dos dados originais.
+                                        2.2.2) Interpretação dos dados .
+                        3)Compressão de dados:
+                            Reduz o volume de dados da entrada, selecionando um subconjunto de dados representativos.
+                            Métodos baseados em amostragem compõem esta técnica.  
+    
+        Tratamento de dados textuais
+            Principais passos:
+                1) Identificação da codificação
+                    Definição:
+                        Processo de identificação da codificação de um texto (ASCII, UNICODE, Latin1, UTF-8, ISO-8859-1)
+                    Encoding: Transforma um conjunto de caracteres em um sequência de bytes.
+                    Decoding: Transforma uma sequência de bytes em um conjunto de caracteres.
+
+                2) Limpeza dos dados
+                    Definição:
+                        Remover ou corrigir dados incompletos, inconsistentes ou mesmo errados.
+                    Principais problemas resolvidos neste passo:
+                        2.1) Valores ausentes
+                            Falta de preenchimento de atributos obrigatórios.
+                        2.2) Utilização de sinônimos    
+                            Informações sintaticamente distintas mas semanticamente iguais.
+                        2.3) Inexistência de representação padrão  
+                            O valor do atributo aparece sob variados formatos.
+
+                3) Análise léxica/transformações
+                    Definição:
+                        Processo de conversão de uma sequência de caracteres em uma sequência de palavras.
+                        Tem como objetivo reduzir as variações de escrita relacionadas a cada termo.
+                        Pode distorcer a semântica das palavras.
+                    Principais passos:
+                        3.1) Remoção de caracteres especiais, pontuações e tags de marcação de texto.
+                        3.2) Transformação em caixa baixa de todo o texto.
+                        3.3) Remoção de caracteres não pertencentes ao vocabulário desejado (Ex.: Acentuações).
+
+                4) Eliminação de Stopwords
+                    Definição:
+                        Remoção de palavras que podem ser consideradas irrelevantes para o estudo.
+                        Pode reduzir a revocação do modelo de aprendizagem.
+
+                5) Stemming
+                    Definição:
+                        Processo de extrair o prefixo de uma palavra, baseada em seu radical ou forma raiz.
+                        Trata a variação sintática de termos.
+                        Pode acarretar perda da semântica.
+                        Tem como objetivo reduzir as formas e derivações inflexivas de cada palavra para uma base ou raiz comum.
+                
+                6) Indexação
+                    Definição:
+                        Processo de indexação dos dados textuais que tem como objetivo otimizar a velocidade e desempenho no acesso as estes dados.
+
+                7) Aplicação de Thesaurus
+                    Definição:
+                        Thesaurus: Instrumento que reúne termos escolhidos a partir de uma estrutura conceitual previamente estabelecida e destinada a indexação e à recuperação de informações.
+                        Cada termo corresponde a um conceito.
+                    Objetivos:
+                        Agrupar as palavras com mesmo significado. 
+                        Prover um vocabulário padronizado, realizando uma classificação semântica dos termos.
+
+                    
