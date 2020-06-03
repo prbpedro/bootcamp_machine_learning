@@ -136,3 +136,4 @@ dmypy.json
 
 #inputs imagens
 src/input/agricultura_iot/*
+src/input/BL-Flickr-Images-Book.csv
