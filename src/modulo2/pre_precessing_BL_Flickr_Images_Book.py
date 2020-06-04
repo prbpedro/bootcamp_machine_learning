@@ -5,7 +5,6 @@ Created on Wed Jun  3 10:03:07 2020
 """
 import pandas
 import numpy
-import datetime
 
 caminho_base='/home/prbpedro/Development/repositories/github/bootcamp_artificial_intelligence/src/input/'
 dataframe=pandas.read_csv(caminho_base + 'BL-Flickr-Images-Book.csv')
