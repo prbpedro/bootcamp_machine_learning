@@ -307,3 +307,5 @@ Módulo 2 - Modelos Preditivos Séries Temporais
                         Prover um vocabulário padronizado, realizando uma classificação semântica dos termos.
 
                     
+	##### Capítulo 4 - Aprendizado de modelos Preditivos    
+        
