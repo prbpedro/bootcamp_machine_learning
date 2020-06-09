@@ -134,7 +134,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-#inputs imagens
+#arquivos grandes
 src/input/agricultura_iot/*
 src/input/BL-Flickr-Images-Book.csv
 src/input/KaggleV2-May-2016.csv
+src/input/PRSA_data_2010.1.1-2014.12.31.csv
