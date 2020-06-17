@@ -23,6 +23,7 @@ regression_classifier_cross_val_score = cross_val_score(regression_classifier, X
 sum_regression_classifier_cross_val_score = 0
 for cv in regression_classifier_cross_val_score:
     sum_regression_classifier_cross_val_score += cv
+mean_regression_classifier_cross_val_score = sum_regression_classifier_cross_val_score/len(regression_classifier_cross_val_score)
 
 knn_classifier = KNeighborsClassifier()
 knn_classifier.fit(X_train, y_train)
@@ -35,14 +36,15 @@ knn_classifier_cross_val_score = cross_val_score(knn_classifier, X, y)
 sum_knn_classifier_cross_val_score = 0
 for cv in knn_classifier_cross_val_score:
     sum_knn_classifier_cross_val_score += cv
+mean_knn_classifier_cross_val_score = sum_knn_classifier_cross_val_score/len(knn_classifier_cross_val_score)
 
 print('Random Forest vs Knn')
-print('Classes: {0}\n'.format(dataset.target_names))
+print('Classes: {0}'.format(dataset.target_names))
 print('Acurácia: {0} vs {1}'.format(regression_classifier_accuracy_score, knn_classifier_accuracy_score))
 print('Recall: {0} vs {1}'.format(regression_classifier_recall_score, knn_classifier_recall_score))
-print('recisão: {0} vs {1}'.format(regression_classifier_precision_score, knn_classifier_precision_score))
+print('Precisão: {0} vs {1}'.format(regression_classifier_precision_score, knn_classifier_precision_score))
 print('Validaçã cruzada: {0} vs {1}'.format(regression_classifier_cross_val_score, knn_classifier_cross_val_score))
-print('Soma validação cruzada: {0} vs {1}'.format(sum_regression_classifier_cross_val_score, sum_knn_classifier_cross_val_score))
+print('Média das validações cruzadas: {0} vs {1}'.format(mean_regression_classifier_cross_val_score, mean_knn_classifier_cross_val_score))
 
 parameters = {'min_samples_split':(2,6)}
 hps_regression_classifier = GridSearchCV(regression_classifier, parameters)

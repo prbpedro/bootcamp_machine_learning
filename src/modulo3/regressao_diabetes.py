@@ -10,6 +10,7 @@ X, y = datasets.load_diabetes(return_X_y=True)
 X = X[:, numpy.newaxis, 2]
 
 # Divide a massa de teste e treinamento
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 #Treinamento da regressão Linear
@@ -23,7 +24,5 @@ print('Erro médio quadrático: %.2f' % mean_squared_error(y_test, y_predicted))
 print('Erro mediano absoluto: %.2f' % median_absolute_error(y_test, y_predicted))
 
 matplotlib.pyplot.scatter(X_test, y_test, color='black')
-matplotlib.pyplot.plot(X_test, y_predicted, color='blue', linewidth=3)
-matplotlib.pyplot.xticks(())
-matplotlib.pyplot.yticks(())
+matplotlib.pyplot.plot(X_test, y_predicted, color='blue')
 matplotlib.pyplot.show()
