@@ -11,7 +11,7 @@ import seaborn
 import matplotlib.pyplot
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import cross_val_score, validation_curve
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from mlxtend.plotting import plot_confusion_matrix
@@ -60,4 +60,34 @@ print(classification_report(y_test, y_pred))
 mc = confusion_matrix(y_test, y_pred)
 fig, ax = plot_confusion_matrix(conf_mat=mc, figsize=(10, 10))
 matplotlib.pyplot.title('Correlation Matrix')
+matplotlib.pyplot.show()
+
+
+
+
+
+
+param_range = numpy.arange(1, 250, 2)
+train_scores, test_scores = validation_curve( rf_clf, X, y, param_range=param_range ,param_name="n_estimators", scoring="accuracy", n_jobs=1)
+train_scores_mean = numpy.mean(train_scores, axis=1)
+train_scores_std = numpy.std(train_scores, axis=1)
+test_scores_mean = numpy.mean(test_scores, axis=1)
+test_scores_std = numpy.std(test_scores, axis=1)
+
+matplotlib.pyplot.title("Validation Curve with SVM")
+matplotlib.pyplot.xlabel(r"$\gamma$")
+matplotlib.pyplot.ylabel("Score")
+matplotlib.pyplot.ylim(0.0, 1.1)
+lw = 2
+matplotlib.pyplot.semilogx(param_range, train_scores_mean, label="Training score",
+             color="darkorange", lw=lw)
+matplotlib.pyplot.fill_between(param_range, train_scores_mean - train_scores_std,
+                 train_scores_mean + train_scores_std, alpha=0.2,
+                 color="darkorange", lw=lw)
+matplotlib.pyplot.semilogx(param_range, test_scores_mean, label="Cross-validation score",
+             color="navy", lw=lw)
+matplotlib.pyplot.fill_between(param_range, test_scores_mean - test_scores_std,
+                 test_scores_mean + test_scores_std, alpha=0.2,
+                 color="navy", lw=lw)
+matplotlib.pyplot.legend(loc="best")
 matplotlib.pyplot.show()
