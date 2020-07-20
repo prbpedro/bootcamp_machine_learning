@@ -82,10 +82,10 @@ features = range(pca.n_components_)
 plt.bar(features, pca.explained_variance_ratio_, color='black')
 plt.xlabel('PCA features')
 plt.ylabel('variance %')
-plt.xticks(features)# Save components to a DataFrame
+plt.xticks(features)
 PCA_components = pd.DataFrame(principalComponents)
-PCA_components = PCA_components.drop(columns=[0,6], axis=1)
-
+PCA_components = PCA_components.drop(columns=[6], axis=1)
+plt.show()
 
 kmeans = KMeans(n_clusters=3, random_state=42) 
 y_kmeans = kmeans.fit_predict(PCA_components)
