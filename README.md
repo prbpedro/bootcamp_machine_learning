@@ -1,2 +1,2 @@
 # bootcamp_artificial_intelligence
-Python projec that contains what I learnd from the IGTI Artificial Intelligence bootcamp
+Python project that contains what I learned from the IGTI Artificial Intelligence bootcamp
