@@ -79,7 +79,7 @@ tornado==6.0.4
 tqdm==4.46.1
 traitlets==4.3.3
 uritemplate==3.0.1
-urllib3==1.25.9
+urllib3==1.26.5
 wcwidth==0.1.9
 Werkzeug==1.0.1
 wrapt==1.12.1
